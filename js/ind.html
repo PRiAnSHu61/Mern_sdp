@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square of Elements</title>
+
+    <script>
+
+// Create an array and return a new array with cube of each element and then filter out the odd number
+
+//     document.addEventListener("DOMContentLoaded", function () {
+//     const arr = [ 23, 34 , 54 , 56, 2, 8, 15, 48];
+    
+//     const newArr = arr.map(element => Math.pow(element, 3));
+//     const odd = newArr.filter(number => number % 3 === 0);
+    
+//     const display1 = document.getElementById('disp1').textContent = "Cube Elements: " + newArr; 
+//     const display2 = document.getElementById('disp2').textContent = "Odd Elements: " + odd; 
+
+// });
+
+// Use reduce() to calculate the price in cart array
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const cart = [{name: "Laptop", price: 50000},
+                  {name: "Phone", price: 12000},
+                  {name: "Tablet", price: 8000}];
+
+    const price = cart.reduce((acc, num) => acc + num.price, 0);
+    const display1 = document.getElementById('disp1').textContent = "Total Cart Price: " + price ; 
+
+    });
+
+// Create an object and then use forEach to square each element then add items in a list and display
+
+//     document.addEventListener("DOMContentLoaded", function () {
+//     const obj = {
+//         "number_1=": 10,
+//         "number_2=": 20,
+//         "number_3=": 30
+//     };
+    
+//     let list = [];
+//     Object.values(obj).forEach(element => {
+//         sq_elements = element*element;
+//         list.push(sq_elements);        
+//     });
+
+    
+//     const display = document.getElementById('disp').textContent = list;
+
+// });
+    </script>
+
+</head>
+<body>
+    <p id="disp1"></p>
+    <p id="disp2"></p>
+</body>
+</html>
