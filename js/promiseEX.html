@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+
+    <script>
+
+        //Create  a function getUser() which returns a promise object when resolved returns an user array with this element i.e, [{id: 1, name: "John", age: 25}, {id: 2, name: "Emily", age: 30}, {id: 3, name: "Micheal", age: 20}] after 5 sec and create a function getUserbyID(id) which return a promise object whhen resolved returns an user object with specified id after 7 sec using async await
+
+    const userArr = [
+        { id: 1, name: "John", age: 25 },
+        { id: 2, name: "Emily", age: 30 },
+        { id: 3, name: "Micheal", age: 20 }
+    ];
+
+function getUser() {
+    return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+            resolve(userArr);
+        }, 5000);
+    });
+}
+
+function getUserbyID(id) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            const user = userArr.find(user => user.id === id);
+            if (user) {
+                resolve(user);
+            } else {
+                reject("User not found");
+            }
+        }, 7000);
+    });
+}
+
+async function consumegetUser() {
+    try {
+        const response = await getUser();
+        const display1 = document.getElementById('disp1').textContent = "All Users: " + JSON.stringify(response, null, 2);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function consumegetUserbyID(id) {
+    try {
+        const user = await getUserbyID(id);
+        const display2 = document.getElementById('disp2').textContent = "User with ID"+ id + ":" + JSON.stringify(user, null, 2);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const response1 = consumegetUser();
+const response2 = consumegetUserbyID(2);
+
+
+</script>
+
+</head>
+<body>
+    <p id="disp1"></p>
+    <p id="disp2"></p>    
+</body>
+</html>
