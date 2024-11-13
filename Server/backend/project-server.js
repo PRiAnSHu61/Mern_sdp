@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((error) => console.error('MongoDB connection error.', error));
 
 app.use('/api/products', productRoutes);
-app.use(cors(corOptions));
+// app.use(cors(corOptions));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

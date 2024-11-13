@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const itemRoutes = require('./routes/itemRoutes');
+const ratingRoutes = require('./routes/ratingRoutes');
 const cors = require('cors');
 
 dotenv.config();
@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))
     .catch((error) => console.error('MongoDB connection error.', error));
 
-app.use('/api/items', itemRoutes);
+app.use('/api/ratings', ratingRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
