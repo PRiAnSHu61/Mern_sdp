@@ -5,19 +5,21 @@ function AddFlight({ onAdd }) {
   const [name, setName] = useState('');
   const [source, setSource] = useState('');
   const [destination, setDestination] = useState('');
+  const [price, setPrice] = useState('');
   const [duration, setDuration] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!flightID || !name || !source || !destination || !duration) {
+    if (!flightID || !name || !source || !destination || !price || !duration) {
       alert('All fields are required.');
       return;
     }
-    onAdd({ flightID, name, source, destination, duration });
+    onAdd({ flightID, name, source, destination, price, duration });
     setFlightID('');
     setName('');
     setSource('');
     setDestination('');
+    setPrice('');
     setDuration('');
   };
 
@@ -50,6 +52,13 @@ function AddFlight({ onAdd }) {
         placeholder="Destination"
         value={destination}
         onChange={(e) => setDestination(e.target.value)}
+        required
+      />
+      <input
+        type="number"
+        placeholder="Price"
+        value={price}
+        onChange={(e) => setPrice(e.target.value)}
         required
       />
       <input

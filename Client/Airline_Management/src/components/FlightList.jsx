@@ -11,6 +11,7 @@ function FlightList({ flights, onEdit, onDelete }) {
             <th>Name</th>
             <th>Source</th>
             <th>Destination</th>
+            <th>Price</th>
             <th>Duration</th>
             <th>Actions</th>
           </tr>
@@ -22,6 +23,7 @@ function FlightList({ flights, onEdit, onDelete }) {
               <td>{flight.name}</td>
               <td>{flight.source}</td>
               <td>{flight.destination}</td>
+              <td>${flight.price}</td>
               <td>{flight.duration} hrs</td>
               <td>
                 <button onClick={() => onEdit(flight)}>Edit</button>
