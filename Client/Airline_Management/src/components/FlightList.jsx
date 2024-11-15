@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function FlightList({ flights, onEdit, onDelete }) {
   return (
@@ -18,16 +19,23 @@ function FlightList({ flights, onEdit, onDelete }) {
         </thead>
         <tbody>
           {flights.map((flight) => (
-            <tr key={flight.flightID}>
-              <td>{flight.flightID}</td>
+            <tr key={flight.id}>
+              <td>{flight.id}</td>
               <td>{flight.name}</td>
               <td>{flight.source}</td>
               <td>{flight.destination}</td>
               <td>${flight.price}</td>
               <td>{flight.duration} hrs</td>
               <td>
-                <button onClick={() => onEdit(flight)}>Edit</button>
-                <button onClick={() => onDelete(flight.flightID)}>Delete</button>
+                <Link to={`/edit-flight/${flight.id}`}>
+                  <button id='editBtn'>Edit</button>
+                </Link>
+                
+                <button 
+                  id='deleteBtn' 
+                  onClick={() => onDelete(flight.id)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}

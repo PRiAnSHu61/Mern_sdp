@@ -1,0 +1,99 @@
+/* Home.css */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #e8f5ff, #cceeff);
+    color: #333;
+  }
+  
+  .home {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .home h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #0077b6;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .home p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+    color: #555;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px 0;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .feature-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #023e8a;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .home-image {
+    margin-top: 20px;
+    max-width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: zoomIn 2s ease-in-out;
+  }
+  
+  .home-image:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

@@ -1,55 +1,230 @@
-nav {
-  background-color: #4CAF50;
-  padding: 10px;
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #e0f7ff, #cce7ff);
+  color: #333;
+}
+
+.container {
   text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #0077b6;
+  margin: 30px 0;
+  animation: slideDown 1s ease-in-out;
+  text-shadow: 1px 1px 2px #023e8a;
+}
+
+nav {
+  background-color: #023e8a;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 8px 8px;
 }
 
 nav a {
-  color: white;
-  margin: 0 10px;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: #0077b6;
+  transform: scale(1.15);
+  box-shadow: 0px 4px 8px rgba(0, 119, 182, 0.5);
 }
 
+/* Home Page Styles */
+.home-container {
+  padding: 40px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.home-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  animation: zoomIn 1.5s ease-in-out;
+}
+
+.home-title {
+  font-size: 3.5rem;
+  color: #023e8a;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 3px #0077b6;
+}
+
+.home-subtitle {
+  font-size: 1.7rem;
+  color: #0077b6;
+  font-weight: 500;
+}
+
+/* Flight List Table Styling */
 table {
-  width: 100%;
+  width: 90%;
+  margin: 30px auto;
   border-collapse: collapse;
-  margin: 20px 0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f8fcff;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-table th, table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+th, td {
+  padding: 18px;
   text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #333;
+  transition: background-color 0.3s ease;
 }
 
-table th {
-  background-color: #f2f2f2;
+th {
+  background-color: #0077b6;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
+td {
+  color: #555;
+}
+
+tr:hover td {
+  background-color: #e1f1ff;
+  transition: background-color 0.2s ease;
+}
+
+button#editBtn{
+  width: 80px;
+  height: 40px;
+  margin: 10px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+button#deleteBtn{
+  margin-right: 20px;
+  width: 80px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button#editBtn:hover{
+  background-color: #004d77;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 77, 119, 0.4);
+}
+button#deleteBtn:hover{
+  background-color: red;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 77, 119, 0.4);
+}
+
+/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  margin: auto;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f8fcff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-form input, form button {
-  margin: 10px 0;
-  padding: 10px;
+form input,
+form button {
+  margin: 12px 0;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: box-shadow 0.3s ease;
+}
+
+form input:focus {
+  box-shadow: 0px 0px 5px rgba(0, 119, 182, 0.5);
+  outline: none;
+  border-color: #0077b6;
 }
 
 form button {
-  background-color: #4CAF50;
+  background-color: #0077b6;
   color: white;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 form button:hover {
-  background-color: #45a049;
+  background-color: #004d77;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 77, 119, 0.4);
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #023e8a;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: 30px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 8px 8px 0 0;
 }
