@@ -34,6 +34,14 @@ const EditFlight = ({ flights, onEdit }) => {
     <div className="container">
       <h1>Edit Flight</h1>
       <form onSubmit={handleSubmit}>
+      <input
+          type="text"
+          name="flightID"
+          value={flightData.flightID}
+          onChange={handleInputChange}
+          placeholder="Flight ID"
+          disabled // The Flight ID should not be editable
+        />
         <input
           type="text"
           name="name"
