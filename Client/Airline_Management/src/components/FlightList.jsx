@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function FlightList({ flights, onEdit, onDelete }) {
   return (
     <div>
-      <h2>Flight List</h2>
+      <h2 id='flightList'>Flight List</h2>
       <table>
         <thead>
           <tr>
